@@ -16,7 +16,7 @@ def generate_launch_description():
     params_file = os.path.join(config_dir, 'tb3_nav_params.yaml')
     rviz_config = os.path.join(config_dir, 'tb3_nav.rviz')
 
-    use_sim_time = LaunchConfiguration('use_sim_time:', default='true')
+    use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     x_pose = LaunchConfiguration('x_pose', default='-3.4')
     y_pose = LaunchConfiguration('y_pose', default='-6.5')
 
@@ -89,36 +89,9 @@ def generate_launch_description():
     ld.add_action(robot_state_publisher_cmd)
     ld.add_action(spawn_turtlebot_cmd)
     ld.add_action(maze_spawner)
-    ld.add_action(maze_mapping)
+    # ld.add_action(maze_mapping)
     ld.add_action(rviz_node)
     ld.add_action(maze_nav)
 
 
     return ld
-
-
-
-# def generate_launch_description():
-#     config_dir = os.path.join(get_package_share_directory('autonomous_tb3'), 'config')
-#     map_file = os.path.join(config_dir, 'tb3_world.yaml')
-#     params_file = os.path.join(config_dir, 'tb3_nav_params.yaml')
-#     rviz_config = os.path.join(config_dir, 'tb3_nav.rviz')
-#     return LaunchDescription([
-#         # Bringing our robot
-#        # Integrating Nav2 stack
-#         IncludeLaunchDescription(PythonLaunchDescriptionSource
-#                         ([get_package_share_directory('nav2_bringup'), '/launch', '/bringup_launch.py']),
-#                         launch_arguments={
-#                             'map' : map_file,
-#                             'params_file' : params_file}.items()
-#         ),
-        
-#         #  Rviz2 bringup
-#         Node(
-#             package='rviz2',
-#             output='screen',
-#             executable='rviz2',
-#             name='rviz2_node',
-#             arguments=['-d', rviz_config]
-#         )
-#     ])
