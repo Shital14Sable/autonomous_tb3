@@ -15,6 +15,8 @@ setup(
         (os.path.join('share', package_name, 'launch'), glob('launch/*')),
         (os.path.join('share', package_name, 'config'), glob('config/*')),
         (os.path.join('share', package_name, 'world/maze'), glob('world/maze/*')),
+        (os.path.join('share', package_name, 'world/hotel'), glob('world/hotel/*')),
+        (os.path.join('share', package_name, 'models/table'), glob('models/table/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
