@@ -29,7 +29,9 @@ setup(
         'console_scripts': [
             'occupancy_grid_pub = autonomous_tb3.occupancy_grid_pub:main',
             'sdf_spawner = autonomous_tb3.spawn_entity:main',
-            'maze_solver = autonomous_tb3.maze_solver:main'
+            'maze_solver = autonomous_tb3.maze_solver:main',
+            'autonomous_waiter_single = autonomous_tb3.hotel_waiter_single_goal:start_app',
+            'autonomous_waiter_full = autonomous_tb3.hotel_waiter_multi_goal:start_app',
         ],
     },
 )
